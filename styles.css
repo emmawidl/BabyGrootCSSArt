@@ -1,0 +1,345 @@
+/*
+COLOURS
+
+background: #fcf1f1
+circle: rgba(235, 169, 210, 0.466)
+
+pot: #e8864e
+pot shadow: rgba(244, 80, 30, 0.4)
+groot: #6A513B
+groot-lines: #9C9078
+leaves: green
+eyes: black
+whites: white
+tongue: rgb(236, 116, 116)
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.canvas {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fcf1f1;
+    width: 100%;
+    height: 100vh;
+}
+
+.circle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 90vmin;
+    height: 90vmin;
+    border-radius: 50%;
+    background: rgba(235, 169, 210, 0.466);
+}
+
+.pot-top {
+    position: absolute;
+    width: 40vmin;
+    height: 6vmin;
+    background: #e8864e;
+    top: 18vmin;
+    left: -8vmin;
+    border-radius: 1vmin;
+}
+
+.pot {
+    position: absolute;
+    border-bottom: 20vmin solid #e8864e;
+    border-left: 6vmin solid transparent;
+    border-right: 6vmin solid transparent;
+    height: 0;
+    width: 35vmin;
+    bottom: 7vmin;
+    transform: rotate(180deg);
+    border-radius: 4vmin;
+}
+
+.pot-shadow {
+    position: absolute;
+    border-top: 5vmin solid rgba(244, 80, 30, 0.4);
+    border-left: 1.5vmin solid transparent;
+    border-right: 1.5vmin solid transparent;
+    width: 33.5vmin;
+    transform: rotate(180deg);
+    left: -5.3vmin;
+    top: 13vmin;
+}
+
+.pot::after {
+    content: "";
+    position: absolute;
+    width: 23vmin;
+    height: 1vmin;
+    background: rgba(247, 90, 43, 0.059);
+}
+
+.body {
+    position: absolute;
+    width: 40vmin;
+    height: 25vmin;
+    background: #6A513B;
+    border-radius: 85vmin / 50vmin;
+    transform: rotate(90deg);
+    bottom: 15vmin;
+    left: 24.5vmin;
+}
+
+.arm-left {
+    position: absolute;
+    width: 7vmin;
+    height: 19vmin;
+    background: #6A513B;
+    border-radius: 5vmin / 18vmin;
+    transform: rotate(25deg);
+    top: 46vmin;
+    left: 29vmin;
+    border: solid #423325;
+    border-top: solid transparent;
+}
+
+.arm-right {
+    position: absolute;
+    width: 7vmin;
+    height: 19vmin;
+    background: #6A513B;
+    border-radius: 6vmin / 19vmin;
+    transform: rotate(40deg);
+    top: 38vmin;
+    left: 54vmin;
+    border: solid #423325;
+    border-bottom: solid transparent;
+    animation: wave 1.5s infinite;
+}
+
+@keyframes wave {
+    0% {
+        transform: rotate(30deg) translate(0px);
+      }
+    50% {
+        transform: rotate(45deg) translate(0px);
+      }
+    100% {
+        transform: rotate(30deg) translate(0px);
+      }
+}
+
+.head {
+    position: absolute;
+    width: 30vmin;
+    height: 35vmin;
+    background: #6A513B;
+    border-radius: 65% / 50% ;
+    top: 12vmin;
+    left: 30vmin;
+    border-bottom: solid #423325;
+}
+
+.hair-1 {
+    position: absolute;
+    height: 16vmin;
+    width: 8vmin;
+    background: #6A513B;
+    bottom: 18vmin;
+    border-left: solid #423325;
+    border-top: solid #423325;
+}
+
+.hair-2 {
+    position: absolute;
+    height: 14vmin;
+    width: 8vmin;
+    background: #6A513B;
+    left: 8vmin;
+    bottom: 24vmin;
+    border: solid #423325;
+    border-bottom: solid transparent;
+}
+
+.hair-3 {
+    position: absolute;
+    height: 12vmin;
+    width: 8vmin;
+    background: #6A513B;
+    left: 16vmin;
+    bottom: 24vmin;
+    border-right: solid #423325;
+    border-top: solid #423325;
+    border-bottom: solid transparent;
+}
+
+.hair-4 {
+    position: absolute;
+    height: 16vmin;
+    width: 8vmin;
+    background: #6A513B;
+    left: 22vmin;
+    bottom: 17vmin;
+    border-right: solid #423325;
+    border-bottom: solid transparent;
+}
+
+.eye-left {
+    position: absolute;
+    background: black;
+    width: 6vmin;
+    height: 6vmin;
+    border-radius: 50%;
+    left: 4.5vmin;
+    top: 18vmin;
+}
+
+.eye-right {
+    position: absolute;
+    background: black;
+    width: 6vmin;
+    height: 6vmin;
+    border-radius: 50%;
+    right: 4.5vmin;
+    top: 18vmin;
+}
+
+.eye-left-white {
+    position: absolute;
+    background: white;
+    width: 3vmin;
+    height: 3vmin;
+    border-radius: 50%;
+    left: 0.7vmin;
+    top: 0.7vmin;
+}
+
+.eye-right-white {
+    position: absolute;
+    background: white;
+    width: 3vmin;
+    height: 3vmin;
+    border-radius: 50%;
+    right: 2.3vmin;
+    top: 0.7vmin;
+}
+
+.mouth {
+    position: absolute;
+    height: 5vmin;
+    width: 8vmin;
+    background: black;
+    border-radius: 5vmin 5vmin 0 0;
+    transform: rotate(180deg);
+    top: 25vmin;
+    left: 11vmin;
+}
+
+.tongue {
+    position: absolute;
+    width: 3vmin;
+    height: 1.5vmin;
+    background: rgb(236, 116, 116);
+    border-radius: 2vmin / 1vmin;
+    transform: rotate(-35deg);
+    top: 0.5vmin;
+    left: 1vmin;
+}
+
+.leaves-1 {
+    position: absolute;
+    width: 4vmin;
+    height: 2vmin;
+    background: green;
+    border-radius: 4vmin / 2vmin;
+    border: rgb(0, 74, 0);
+    transform: rotate(30deg);
+    left: -3vmin;
+}
+
+.leaves-2 {
+    content: "";
+    position: absolute;
+    width: 4vmin;
+    height: 2vmin;
+    background: green;
+    border-radius: 4vmin / 2vmin;
+    border: rgb(0, 74, 0);
+    transform: rotate(-45deg);
+    left: -1vmin;
+    bottom: 2vmin;
+}
+
+.leaves-3 {
+    content: "";
+    position: absolute;
+    width: 4vmin;
+    height: 2vmin;
+    background: green;
+    border-radius: 4vmin / 2vmin;
+    border: rgb(0, 74, 0);
+    transform: rotate(-45deg);
+    left: 7vmin;
+    bottom: vmin;
+}
+
+.leaves-4 {
+    position: absolute;
+    width: 4vmin;
+    height: 2vmin;
+    background: green;
+    border-radius: 4vmin / 2vmin;
+    border: rgb(0, 74, 0);
+    transform: rotate(30deg);
+    left: 4vmin;
+    bottom: 8vmin;
+}
+
+.leaves-4::before {
+    content: "";
+    position: absolute;
+    width: 4vmin;
+    height: 2vmin;
+    background: green;
+    border-radius: 4vmin / 2vmin;
+    border: rgb(0, 74, 0);
+    transform: rotate(30deg);
+    left: -15.9vmin;
+    bottom: vmin;
+}
+
+/*
+SHAPES
+
+ #oval {
+      width: 200px;
+      height: 100px;
+      background: red;
+      border-radius: 100px / 50px;
+    }
+  #circle {
+    width: 100px;
+    height: 100px;
+    background: red;
+    border-radius: 50%
+}
+
+ #egg {
+      display: block;
+      width: 126px;
+      height: 180px;
+      background-color: red;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    }
+
+.semi-circle {
+  height: 5rem;
+  width: 10rem;
+  border-radius: 5rem 5rem 0 0;
+}
+
+*/
